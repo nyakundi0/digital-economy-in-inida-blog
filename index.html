@@ -13,12 +13,15 @@
             --white: #ffffff; /* White (Indian Flag) */
             --green: #138808; /* Green (Indian Flag) */
             --blue: #000080; /* Blue (Indian Flag) */
+            --card-color: #ffffff;
+            --card-hover-color: #f4f4f4;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
         }
 
         /* Header Section */
@@ -61,17 +64,50 @@
             padding: 20px;
         }
 
+        /* Styling for card flip */
+        .stats-card-wrapper {
+            perspective: 1000px;
+            display: inline-block;
+            margin: 10px;
+        }
+
         .stats-card {
-            background: white;
+            width: 300px;
+            height: 200px;
+            background-color: var(--card-color);
             border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+            cursor: pointer;
         }
 
         .stats-card:hover {
-            transform: translateY(-5px);
+            transform: rotateY(180deg);
+        }
+
+        .stats-card-front,
+        .stats-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stats-card-front {
+            background-color: var(--card-color);
+        }
+
+        .stats-card-back {
+            background-color: var(--card-hover-color);
+            transform: rotateY(180deg);
+            color: var(--blue);
         }
 
         .timeline {
@@ -143,6 +179,19 @@
             background-color: var(--blue);
             color: var(--white);
         }
+
+        /* New Section Styles */
+        .extra-content {
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .extra-content h3 {
+            color: var(--saffron);
+        }
     </style>
 </head>
 
@@ -172,7 +221,7 @@
     <!-- E-Commerce Trends Section -->
     <section id="trends">
         <h2>E-Commerce Trends in India</h2>
-        <p>The rise of smartphones and internet access has drastically influenced the growth of e-commerce. With more people turning to online platforms for shopping, businesses are evolving their strategies to cater to the expanding digital consumer base.</p>
+        <p>The rise of smartphones and internet access has drastically influenced the growth of e-commerce. With more people turning to online platforms for shopping, businesses are evolving their strategies to cater to the expanding digital consumer base. The growth is also fueled by innovations in online payment systems such as UPI, mobile wallets, and digital banking platforms.</p>
 
         <!-- Interactive Graph/Trend Data -->
         <div id="trend-graph">
@@ -185,13 +234,13 @@
     <!-- Challenges Section -->
     <section id="challenges">
         <h2>Challenges in E-Commerce and Digital Payments</h2>
-        <p>Despite rapid growth, challenges like security concerns, digital literacy, and infrastructure gaps remain. Addressing these challenges will be crucial for continued growth in India's e-commerce and digital payments landscape.</p>
+        <p>Despite rapid growth, challenges like security concerns, digital literacy, and infrastructure gaps remain. Addressing these challenges will be crucial for continued growth in India's e-commerce and digital payments landscape. Additionally, issues such as data privacy and cyber fraud need to be tackled proactively to ensure user confidence in online transactions.</p>
     </section>
 
     <!-- Future Prospects Section -->
     <section id="future">
         <h2>Future Prospects</h2>
-        <p>The future of e-commerce and digital payments looks promising, with innovations such as AI-powered shopping assistants, augmented reality (AR) shopping experiences, and blockchain-based payment solutions on the horizon.</p>
+        <p>The future of e-commerce and digital payments looks promising, with innovations such as AI-powered shopping assistants, augmented reality (AR) shopping experiences, and blockchain-based payment solutions on the horizon. The rise of 5G connectivity will further enhance the speed and efficiency of online transactions, while also enabling more immersive experiences for consumers.</p>
 
         <!-- Video to showcase future technologies -->
         <div id="video-container">
@@ -208,149 +257,52 @@
         <iframe src="https://www.finance.com/" title="External Resource" width="100%" height="500px"></iframe>
     </section>
 
-    <div class="container">
+    <!-- Key Statistics Section -->
+    <section class="container">
+        <h2>Key Statistics</h2>
         <div id="keyStats"></div>
-
-        <div class="chart-container">
-            <h2>Digital Payments Growth</h2>
-            <div id="growthChart"></div>
+        <div class="extra-content">
+            <h3>Payment Platforms Overview</h3>
+            <p>In India, several platforms are driving the growth of digital payments, including UPI, mobile wallets, and net banking. Each platform caters to different user needs, making it easier for consumers to transact digitally across various services.</p>
         </div>
+    </section>
 
-        <section class="payment-methods" id="paymentPlatforms">
-            <!-- Payment platforms will be dynamically populated -->
-        </section>
-
-        <div class="timeline" id="digitalTimeline">
-            <!-- Timeline will be dynamically populated -->
-        </div>
+    <div class="chart-container">
+        <h2>Digital Payments Growth</h2>
+        <div id="growthChart"></div>
     </div>
 
-    <!-- Footer Section -->
+    <section class="payment-methods" id="payment-methods">
+        <div class="stats-card-wrapper">
+            <div class="stats-card">
+                <div class="stats-card-front">
+                    <h3>Mobile Wallets</h3>
+                    <p>Rapidly growing payment method for everyday purchases.</p>
+                </div>
+                <div class="stats-card-back">
+                    <p>Examples: Paytm, PhonePe, Google Pay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>Project by Pooja Kaur and Harpreet Kaur</p>
+        <p>© 2024 Digital India</p>
     </footer>
 
     <script>
-        // Key statistics data
-        const statistics = [
-            {
-                title: "UPI Transactions",
-                value: "₹8.7 trillion",
-                growth: "+427% YoY"
-            },
-            {
-                title: "Digital Payments Users",
-                value: "300 million",
-                growth: "+50% YoY"
-            },
-            {
-                title: "E-commerce Market Size",
-                value: "$74.8 billion",
-                growth: "+35% YoY"
-            }
-        ];
-
-        // Payment platforms data
-        const platforms = [
-            {
-                name: "UPI",
-                users: "500 million",
-                description: "Unified Payments Interface"
-            },
-            {
-                name: "Mobile Wallets",
-                users: "350 million",
-                description: "Digital wallet platforms"
-            },
-            {
-                name: "Net Banking",
-                users: "250 million",
-                description: "Bank-based online payments"
-            }
-        ];
-
-        // Timeline events
-        const timelineEvents = [
-            {
-                year: 2016,
-                event: "Launch of UPI",
-                description: "Revolutionary instant payment system"
-            },
-            {
-                year: 2018,
-                event: "Digital Payments Growth",
-                description: "100% increase in digital transactions"
-            },
-            {
-                year: 2020,
-                event: "COVID-19 Impact",
-                description: "Accelerated digital adoption"
-            }
-        ];
-
-        // Function to populate statistics
-        function populateStatistics() {
-            const statsContainer = document.getElementById('keyStats');
-            statistics.forEach(stat => {
-                const card = document.createElement('div');
-                card.classList.add('stats-card');
-                card.innerHTML = `
-                    <h3>${stat.title}</h3>
-                    <p>${stat.value}</p>
-                    <p><strong>${stat.growth}</strong></p>
-                `;
-                statsContainer.appendChild(card);
-            });
-        }
-
-        // Function to populate payment methods
-        function populatePaymentMethods() {
-            const platformContainer = document.getElementById('paymentPlatforms');
-            platforms.forEach(platform => {
-                const card = document.createElement('div');
-                card.classList.add('stats-card');
-                card.innerHTML = `
-                    <h3>${platform.name}</h3>
-                    <p><strong>Users:</strong> ${platform.users}</p>
-                    <p>${platform.description}</p>
-                `;
-                platformContainer.appendChild(card);
-            });
-        }
-
-        // Function to populate timeline
-        function populateTimeline() {
-            const timelineContainer = document.getElementById('digitalTimeline');
-            timelineEvents.forEach(event => {
-                const item = document.createElement('div');
-                item.classList.add('timeline-item');
-                item.innerHTML = `
-                    <h4>${event.year} - ${event.event}</h4>
-                    <p>${event.description}</p>
-                `;
-                timelineContainer.appendChild(item);
-            });
-        }
-
-        // Load all dynamic content
-        window.onload = function () {
-            populateStatistics();
-            populatePaymentMethods();
-            populateTimeline();
-        };
-
-        // Chart and trends data for future implementation
+        // Show graph for trends
         function showTrendGraph() {
             const ctx = document.getElementById('ecommerce-trends').getContext('2d');
-            const chart = new Chart(ctx, {
+            new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['2019', '2020', '2021', '2022', '2023'],
+                    labels: ['2018', '2019', '2020', '2021', '2022'],
                     datasets: [{
-                        label: 'E-Commerce Growth (in billion INR)',
-                        data: [3, 4.2, 5.3, 6.5, 7.9],
+                        label: 'E-Commerce Growth in India',
+                        data: [20, 30, 40, 60, 80],
                         fill: false,
-                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
                         tension: 0.1
                     }]
                 }
