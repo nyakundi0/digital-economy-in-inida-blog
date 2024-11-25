@@ -9,24 +9,23 @@
 
     <style>
         :root {
-            --primary-color: #ff9933; /* Saffron (Indian Flag) */
-            --secondary-color: #138808; /* Green (Indian Flag) */
-            --accent-color: #000080; /* Blue (Indian Flag) */
-            --white-color: #ffffff; /* White (Indian Flag) */
-            --background-light: #f8f9fa;
+            --saffron: #ff9933; /* Saffron (Indian Flag) */
+            --white: #ffffff; /* White (Indian Flag) */
+            --green: #138808; /* Green (Indian Flag) */
+            --blue: #000080; /* Blue (Indian Flag) */
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--background-light);
+            background: linear-gradient(180deg, var(--saffron) 0%, var(--white) 33%, var(--green) 66%);
         }
 
         /* Header */
         header {
-            background-color: #138808; /* Changed header to green */
-            color: var(--white-color);
+            background: linear-gradient(135deg, var(--saffron), var(--white), var(--green));
+            color: var(--blue);
             padding: 1rem 0;
             text-align: center;
         }
@@ -47,7 +46,7 @@
         }
 
         header nav ul li a {
-            color: white;
+            color: var(--blue);
             text-decoration: none;
             font-size: 18px;
         }
@@ -57,13 +56,6 @@
         }
 
         /* Main content */
-        .header {
-            background: linear-gradient(135deg, var(--primary-color), var(--white-color), var(--secondary-color));
-            padding: 2rem;
-            text-align: center;
-            color: var(--accent-color);
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -89,7 +81,7 @@
         }
 
         .timeline-item {
-            border-left: 2px solid var(--primary-color);
+            border-left: 2px solid var(--saffron);
             padding-left: 20px;
             margin: 20px 0;
             position: relative;
@@ -102,7 +94,7 @@
             top: 0;
             width: 14px;
             height: 14px;
-            background: var(--primary-color);
+            background: var(--saffron);
             border-radius: 50%;
         }
 
@@ -130,7 +122,7 @@
         }
 
         section h2 {
-            color: var(--primary-color);
+            color: var(--saffron);
         }
 
         #trend-graph {
@@ -149,8 +141,8 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
-            color: white;
+            background-color: var(--blue);
+            color: var(--white);
         }
     </style>
 </head>
