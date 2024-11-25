@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital India: E-Commerce & Payment Revolution</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.12.2/Recharts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 
     <style>
         :root {
@@ -259,7 +259,7 @@
         <!-- Video to showcase future technologies -->
         <div id="video-container">
             <video controls>
-                <source src="https://www.shutterstock.com/video/clip-1110615263-indian-villagers-setting-front-home-using-laptop" type="video/mp4">
+                <source src="https://www.youtube.com/watch?v=cW5bXOfD1EI.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -276,66 +276,66 @@
         <h2>Key Statistics</h2>
         <div id="keyStats"></div>
         <div class="extra-content">
-            <h3>Payment Platforms Overview</h3>
-            <p>In India, several platforms are driving the growth of digital payments, including UPI, mobile wallets, and net banking. Each platform caters to different user needs, making it easier for consumers to transact digitally across various services.</p>
+            <h3>Relevant Payment Methods</h3>
+            <div class="payment-methods">
+                <div class="stats-card-wrapper">
+                    <div class="stats-card">
+                        <div class="stats-card-front">
+                            <h3>UPI (Unified Payments Interface)</h3>
+                            <p>Revolutionizing payments with seamless and instant money transfers.</p>
+                        </div>
+                        <div class="stats-card-back">
+                            <p>Example: Google Pay, PhonePe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Cards -->
+                <div class="stats-card-wrapper">
+                    <div class="stats-card">
+                        <div class="stats-card-front">
+                            <h3>Mobile Wallets</h3>
+                            <p>Rapidly growing payment method for everyday purchases.</p>
+                        </div>
+                        <div class="stats-card-back">
+                            <p>Examples: Paytm, PhonePe, Google Pay.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card-wrapper">
+                    <div class="stats-card">
+                        <div class="stats-card-front">
+                            <h3>Debit/Credit Cards</h3>
+                            <p>Traditional yet reliable way for making digital transactions.</p>
+                        </div>
+                        <div class="stats-card-back">
+                            <p>Examples: Visa, MasterCard.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card-wrapper">
+                    <div class="stats-card">
+                        <div class="stats-card-front">
+                            <h3>Net Banking</h3>
+                            <p>Banking online, a secure method for digital payments.</p>
+                        </div>
+                        <div class="stats-card-back">
+                            <p>Examples: ICICI, HDFC, SBI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Card Section for Payment Methods -->
-    <div class="payment-methods">
-        <!-- Original Cards and New Cards for Various Payment Methods -->
-        <div class="stats-card-wrapper">
-            <div class="stats-card">
-                <div class="stats-card-front">
-                    <h3>UPI (Unified Payments Interface)</h3>
-                    <p>Revolutionizing payments with seamless and instant money transfers.</p>
-                </div>
-                <div class="stats-card-back">
-                    <p>Example: Google Pay, PhonePe.</p>
-                </div>
-            </div>
-        </div>
-        <div class="stats-card-wrapper">
-            <div class="stats-card">
-                <div class="stats-card-front">
-                    <h3>Mobile Wallets</h3>
-                    <p>Rapidly growing payment method for everyday purchases.</p>
-                </div>
-                <div class="stats-card-back">
-                    <p>Examples: Paytm, PhonePe, Google Pay.</p>
-                </div>
-            </div>
-        </div>
-        <div class="stats-card-wrapper">
-            <div class="stats-card">
-                <div class="stats-card-front">
-                    <h3>Debit/Credit Cards</h3>
-                    <p>Traditional yet reliable way for making digital transactions.</p>
-                </div>
-                <div class="stats-card-back">
-                    <p>Examples: Visa, MasterCard.</p>
-                </div>
-            </div>
-        </div>
-        <div class="stats-card-wrapper">
-            <div class="stats-card">
-                <div class="stats-card-front">
-                    <h3>Net Banking</h3>
-                    <p>Banking online, a secure method for digital payments.</p>
-                </div>
-                <div class="stats-card-back">
-                    <p>Examples: ICICI, HDFC, SBI.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <p>© 2024 Digital India</p>
     </footer>
 
     <script>
-        // Show graph for trends
+        // Function to show the trend graph on button click
         function showTrendGraph() {
             const ctx = document.getElementById('ecommerce-trends').getContext('2d');
             new Chart(ctx, {
@@ -353,7 +353,6 @@
             });
         }
     </script>
-
 </body>
 
 </html>
