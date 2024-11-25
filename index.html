@@ -192,6 +192,18 @@
         .extra-content h3 {
             color: var(--saffron);
         }
+
+        /* Images */
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -215,7 +227,9 @@
     <section id="intro">
         <h2>Introduction</h2>
         <p>India has experienced a significant transformation in e-commerce and digital payments, especially after demonetization. With the rapid adoption of smartphones and internet services, the country is poised to become one of the largest digital economies in the world.</p>
-        <img src="india.png" alt="E-Commerce in India" id="ecommerce-image">
+        <div class="image-container">
+            <img src="india.png" alt="E-Commerce in India" />
+        </div>
     </section>
 
     <!-- E-Commerce Trends Section -->
@@ -267,12 +281,20 @@
         </div>
     </section>
 
-    <div class="chart-container">
-        <h2>Digital Payments Growth</h2>
-        <div id="growthChart"></div>
-    </div>
-
-    <section class="payment-methods" id="payment-methods">
+    <!-- Card Section for Payment Methods -->
+    <div class="payment-methods">
+        <!-- Original Cards and New Cards for Various Payment Methods -->
+        <div class="stats-card-wrapper">
+            <div class="stats-card">
+                <div class="stats-card-front">
+                    <h3>UPI (Unified Payments Interface)</h3>
+                    <p>Revolutionizing payments with seamless and instant money transfers.</p>
+                </div>
+                <div class="stats-card-back">
+                    <p>Example: Google Pay, PhonePe.</p>
+                </div>
+            </div>
+        </div>
         <div class="stats-card-wrapper">
             <div class="stats-card">
                 <div class="stats-card-front">
@@ -284,7 +306,29 @@
                 </div>
             </div>
         </div>
-    </section>
+        <div class="stats-card-wrapper">
+            <div class="stats-card">
+                <div class="stats-card-front">
+                    <h3>Debit/Credit Cards</h3>
+                    <p>Traditional yet reliable way for making digital transactions.</p>
+                </div>
+                <div class="stats-card-back">
+                    <p>Examples: Visa, MasterCard.</p>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card-wrapper">
+            <div class="stats-card">
+                <div class="stats-card-front">
+                    <h3>Net Banking</h3>
+                    <p>Banking online, a secure method for digital payments.</p>
+                </div>
+                <div class="stats-card-back">
+                    <p>Examples: ICICI, HDFC, SBI.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>© 2024 Digital India</p>
