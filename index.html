@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital India: E-Commerce & Payment Revolution</title>
+    <style>
+        :root {
+            --primary-color: #ff9933; /* Saffron (Indian Flag) */
+            --secondary-color: #138808; /* Green (Indian Flag) */
+            --accent-color: #000080; /* Blue (Indian Flag) */
+            --white-color: #ffffff; /* White (Indian Flag) */
+            --background-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--white-color), var(--secondary-color));
+            padding: 2rem;
+            text-align: center;
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            border-left: 2px solid var(--primary-color);
+            padding-left: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        #growthChart {
+            width: 100%;
+            height: 400px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            margin: 30px 0;
+        }
+
+        section h2 {
+            color: var(--primary-color);
+        }
+
+        #trend-graph {
+            text-align: center;
+        }
+
+        #video-container {
+            text-align: center;
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Digital India: E-Commerce & Payment Revolution</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#trends">Trends</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#future">Future Prospects</a></li>
+                <li><a href="#resources">Additional Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction Section -->
+    <section id="intro">
+        <h2>Introduction</h2>
+        <p>India has experienced a significant transformation in e-commerce and digital payments, especially after demonetization...</p>
+        <img src="india.png" alt="E-Commerce in India" id="ecommerce-image">
+    </section>
+
+    <!-- E-Commerce Trends Section -->
+    <section id="trends">
+        <h2>E-Commerce Trends in India</h2>
+        <p>The rise of smartphones and internet access has drastically influenced the growth of e-commerce...</p>
+
+        <!-- Interactive Graph/Trend Data (Placeholder for now) -->
+        <div id="trend-graph">
+            <canvas id="ecommerce-trends"></canvas>
+        </div>
+
+        <button onclick="showTrendGraph()">Show Trend Graph</button>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="challenges">
+        <h2>Challenges in E-Commerce and Digital Payments</h2>
+        <p>Despite rapid growth, challenges like security concerns, digital literacy, and infrastructure gaps remain...</p>
+    </section>
+
+    <!-- Future Prospects Section -->
+    <section id="future">
+        <h2>Future Prospects</h2>
+        <p>The future of e-commerce and digital payments looks promising, with innovations such as AI-powered shopping assistants...</p>
+
+        <!-- Video to showcase future technologies -->
+        <div id="video-container">
+            <video controls>
+                <source src="https://www.youtube.com/watch?v=cW5bXOfD1EI.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Additional Resources (iFrame for External Content) -->
+    <section id="resources">
+        <h2>Additional Resources</h2>
+        <iframe src="https://www.uniqode.com/" title="External Resource" width="100%" height="500px"></iframe>
+    </section>
+
+    <div class="container">
+        <div id="keyStats"></div>
+        
+        <div class="chart-container">
+            <h2>Digital Payments Growth</h2>
+            <div id="growthChart"></div>
+        </div>
+
+        <section class="payment-methods" id="paymentPlatforms">
+            <!-- Payment platforms will be dynamically populated -->
+        </section>
+
+        <div class="timeline" id="digitalTimeline">
+            <!-- Timeline will be dynamically populated -->
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Project by [Your Name] and [Partner's Name]</p>
+    </footer>
+
+    <script>
+        // Key statistics data
+        const statistics = [
+            {
+                title: "UPI Transactions",
+                value: "₹8.7 trillion",
+                growth: "+427% YoY"
+            },
+            {
+                title: "Digital Payments Users",
+                value: "300 million",
+                growth: "+50% YoY"
+            },
+            {
+                title: "E-commerce Market Size",
+                value: "$74.8 billion",
+                growth: "+35% YoY"
+            }
+        ];
+
+        // Payment platforms data
+        const platforms = [
+            {
+                name: "UPI",
+                users: "500 million",
+                description: "Unified Payments Interface"
+            },
+            {
+                name: "Mobile Wallets",
+                users: "350 million",
+                description: "Digital wallet platforms"
+            },
+            {
+                name: "Net Banking",
+                users: "250 million",
+                description: "Bank-based online payments"
+            }
+        ];
+
+        // Timeline events
+        const timelineEvents = [
+            {
+                year: 2016,
+                event: "Launch of UPI",
+                description: "Revolutionary instant payment system"
+            },
+            {
+                year: 2018,
+                event: "Digital Payments Growth",
+                description: "100% increase in digital transactions"
+            },
+            {
+                year: 2020,
+                event: "COVID-19 Impact",
+                description: "Accelerated digital adoption"
+            }
+        ];
+
+        // Function to populate statistics
+        function populateStatistics() {
+            const statsContainer = document.getElementById('keyStats');
+            statistics.forEach(stat => {
+                const card = document.createElement('div');
+                card.className = 'stats-card';
+                card.innerHTML = `
+                    <h3>${stat.title}</h3>
+                    <h2>${stat.value}</h2>
+                    <p>${stat.growth}</p>
+                `;
+                statsContainer.appendChild(card);
+            });
+        }
+
+        // Function to populate payment platforms
+        function populatePaymentPlatforms() {
+            const platformsContainer = document.getElementById('paymentPlatforms');
+            platforms.forEach(platform => {
+                const div = document.createElement('div');
+                div.className = 'stats-card';
+                div.innerHTML = `
+                    <h3>${platform.name}</h3>
+                    <p>Active Users: ${platform.users}</p>
+                    <p>${platform.description}</p>
+                `;
+                platformsContainer.appendChild(div);
+            });
+        }
+
+        // Function to create timeline
+        function createTimeline() {
+            const timelineContainer = document.getElementById('digitalTimeline');
+            timelineEvents.forEach(event => {
+                const div = document.createElement('div');
+                div.className = 'timeline-item';
+                div.innerHTML = `
+                    <h3>${event.year}</h3>
+                    <p><strong>${event.event}:</strong> ${event.description}</p>
+                `;
+                timelineContainer.appendChild(div);
+            });
+        }
+
+        // Call functions to populate data
+        populateStatistics();
+        populatePaymentPlatforms();
+        createTimeline();
+
+        // Chart rendering (Placeholder example)
+        function showTrendGraph() {
+            const ctx = document.getElementById('ecommerce-trends').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2018', '2019', '2020', '2021', '2022'],
+                    datasets: [{
+                        label: 'E-Commerce Growth',
+                        data: [100, 150, 200, 300, 450],
+                        borderColor: '#ff9933',
+                        fill: false
+                    }]
+                }
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
